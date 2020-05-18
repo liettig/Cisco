@@ -1,0 +1,3 @@
+rtr1,IOS-XE,10.0.224.25,user,password
+rtr2,IOS,10.0.224.31,user,password
+rtr3,IOS,10.0.224.32,user,password
