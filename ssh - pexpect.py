@@ -8,11 +8,11 @@ def connect(dev_ip,username,password):
     """
     Connects to device using pexpect
 
-    :dev_ip: The IP address of the device we are connectin to
-    :username: The username that we should use when logging in
-    :password: The password that we should use when logging in
+    dev_ip: The IP address of the device we are connectin to
+    username: The username that we should use when logging in
+    password: The password that we should use when logging in
 
-    =return: pexpect session object if succssful, 0 otherwise
+    return: pexpect session object if successful, 0 otherwise
 
     """
 
