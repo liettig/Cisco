@@ -1,0 +1,32 @@
+---
+eng-lab-ch-bel-s-001:
+  hostip: 10.0.224.31
+  sshport: 22
+  interfaces:
+    # Interface, IP, Mask, MPLS Enabled?
+    - ['Loopback0', '172.16.1.1', '255.255.255.0', True]
+    - ['Loopback1', '172.16.2.1', '255.255.255.0', True]
+    - ['Loopback2', '172.16.3.1', '255.255.255.0', True] 
+  eigrp:
+    as: 10
+    network1: 172.16.1.0
+    network2: 172.16.2.0
+    network3: 192.168.255.0 
+    mask3: 0.0.0.3
+    id: 2.2.2.2
+
+eng-lab-ch-bel-s-003:
+  hostip: 10.0.224.33
+  sshport: 22
+  interfaces:
+    # Interface, IP, Mask, MPLS Enabled?
+    - ['Loopback0', '172.16.4.1', '255.255.255.0', True]
+    - ['Loopback1', '172.16.5.1', '255.255.255.0', True]
+    - ['Loopback2', '172.16.6.1', '255.255.255.0', True]   
+  eigrp:
+    as: 10
+    network1: 172.16.4.0
+    network2: 192.168.255.0
+    mask1: 0.0.3.255
+    id: 3.3.3.3 
+

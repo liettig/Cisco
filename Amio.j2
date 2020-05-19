@@ -1,0 +1,34 @@
+hostname {{ host }}
+no ip domain-lookup
+
+{%- if host == 'eng-lab-ch-bel-s-001' %}
+{%- if eigrp %}
+router eigrp {{ eigrp['as'] }}
+ network {{ eigrp['network1'] }}
+ network {{ eigrp['network2'] }}
+ network {{ eigrp['network3'] }} {{ eigrp['mask3'] }}
+ eigrp router-id 2.2.2.2
+exit
+no router eigrp {{ eigrp['as'] }}
+{%- endif %}
+{%- endif %}
+
+{%- if host == 'eng-lab-ch-bel-s-003' %}
+{%- if eigrp %}
+router eigrp {{ eigrp['as'] }}
+ network {{ eigrp['network1'] }} {{ eigrp['mask1'] }}
+ network {{ eigrp['network2'] }}
+ eigrp router-id 3.3.3.3
+{%- endif %}
+exit
+no router eigrp {{ eigrp['as'] }}
+{%- endif %}
+
+{%- for iface in interfaces %}
+interface {{ iface[0] }}
+ ip address {{ iface[1] }} {{ iface[2] }}
+{%- endfor %}
+exit
+no interface Loopback1
+no interface Loopback2
+
